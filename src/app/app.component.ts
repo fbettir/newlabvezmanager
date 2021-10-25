@@ -48,7 +48,7 @@ export class AppComponent implements OnInit{
     if(mode === 'delete'){
       button.setAttribute('data-target', '#deleteCandidateModal')
     }
-    
+    container?.appendChild(button);
     button.click();
   }
 
