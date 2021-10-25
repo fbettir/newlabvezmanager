@@ -11,7 +11,6 @@ export class CandidateService {
 	
 	private apiServerUrl = environment.apiBaseUrl;
 	
-
   constructor(private http: HttpClient) { }
   
   public getCandidates(): Observable<Candidate[]> {
