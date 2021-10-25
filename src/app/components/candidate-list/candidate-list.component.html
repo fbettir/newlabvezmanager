@@ -1,0 +1,83 @@
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<nav></nav>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" style="color:white;">Labvez Manager</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarColor02">
+       <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+             <a class="nav-link" data-toggle="modal" data-target="#exampleModal">Add Candidate <span class="sr-only">(current)</span></a>
+          </li>
+       </ul>
+       <form class="form-inline my-2 my-lg-0">
+          <input type="search" name="key" id="searchName" class="form-control mr-sm-2" placeholder="Search employees..." >
+       </form>
+    </div>
+  </nav>
+<div class="container" id="main-container">
+    <br>
+    <h4>
+        Laborvezetők
+    </h4>
+    <div class="row">
+        <div  class="col-lg-10 col-md-10 col-12">
+            <table  class ="table table-striped table bordered">
+                <tr>
+                    <th>
+                        Név
+                    </th>
+                    <th>
+                        Email
+                    </th>
+                    <th>
+                        Telefonszám
+                    </th>
+                    <th>
+                        Tantárgyak
+                    </th>
+                    <th>
+                        &nbsp;
+                    </th>
+                </tr>
+                <tr *ngFor= "let candidate of candidates">
+                    <td>
+                       {{candidate.firstName}} {{candidate.lastName}}
+                    </td>
+                    <td>
+                        {{candidate.email}}
+                    </td>
+                    <td>
+                        {{candidate.phone}}
+                    </td>
+                    <td>
+                        ...
+                    </td>
+                    <td>
+                        <!---add candidate modal -->
+                    <div class="modal fade" id="addCandidateModal" tabindex="-1" role="dialog" aria-labelledby="candidateAddModalLabel" aria-hidden="true">
+                    </div>
+
+                        <!---edit candidate modal -->
+                    <div class="modal fade" id="updateCandidateModal" tabindex="-1" role="dialog" aria-labelledby="candidateEditModalLabel" aria-hidden="true">
+                    </div>
+
+                        <!---edit candidate modal -->
+                    <div class="modal fade" id="deleteCandidateModal" tabindex="-1" role="dialog" aria-labelledby="candidateDeleteModalLabel" aria-hidden="true">
+                    </div>
+
+                        <a href="/island_modify.html" class="btn btn-small btn-dark">módosítás</a>
+                        <a href="#" class="btn btn-small btn-danger">törlés</a>
+                    </td>
+
+                </tr>
+            </table>
+            <br>
+            <a href="app.form.html" class="btn btn-primary">Új laborvezető hozzáadása</a>
+            <br>
+        </div>
+
+    </div>
+
+</div>
