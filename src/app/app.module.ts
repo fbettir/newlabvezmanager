@@ -16,9 +16,10 @@ import { CandidateListComponent } from './components/candidate-list/candidate-li
     CandidateListComponent   
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
 	HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [CandidateService],
   bootstrap: [AppComponent]

@@ -1,1 +1,56 @@
-<p>add-candidate works!</p>
+<div class="card my-5">
+  <div class="card-body">
+    <form #addCandidate="ngForm" (ngSubmit)="onSubmit(addCandidate.value)" >
+      <div class="form-group">
+        <label for="name">Veznév</label>
+        <input type="text" ngModel 
+               class="form-control"
+               id="firstName"
+               name="firstName"
+               placeholder="Enter your name"
+               required>
+        
+      </div>
+      
+
+      <div class="form-group">
+        <label for="name">Kernév</label>
+        <input type="text" ngModel 
+               class="form-control"
+               id="lastName"
+               name="lastName"
+               placeholder="Enter your name"
+               required>
+        
+      </div>
+      
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="text" ngModel 
+               class="form-control"
+               id="email"
+               name="email"
+               placeholder="Enter your email address"
+               required>
+        
+      </div>
+
+      <div class="form-group">
+        <label for="email">Phone</label>
+        <input type="text" ngModel 
+               class="form-control"
+               id="phone"
+               name="phone"
+               placeholder="Enter your tel"
+               required>
+        
+      </div>
+
+      <button type="submit"
+              class="btn btn-info">
+        Submit
+      </button>
+    </form>
+  </div>
+</div>

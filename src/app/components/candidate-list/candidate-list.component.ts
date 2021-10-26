@@ -15,7 +15,8 @@ export class CandidateListComponent implements OnInit {
   public candidates: Candidate[];
 
 
-  constructor(private candidateService: CandidateService) { }
+  constructor(private candidateService: CandidateService) { 
+  }
 
   ngOnInit(): void {
     this.getCandidates();
