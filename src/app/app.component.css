@@ -1,0 +1,11 @@
+div.header{
+    background-color: lightblue;
+    color: navy;
+    height: 40px;
+
+}
+
+dialog.header a{
+    text-decoration: none;
+    color: inherit;
+}
