@@ -7,13 +7,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { AddCandidateComponent } from './components/add-candidate/add-candidate.component';
 import { CandidateListComponent } from './components/candidate-list/candidate-list.component';
+import { HomeComponent } from './components/home/home.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     AddCandidateComponent,
-    CandidateListComponent   
+    CandidateListComponent,
+    HomeComponent   
   ],
   imports: [
     BrowserModule,
