@@ -5,7 +5,10 @@
     "\\src\\app",
     "\\src\\app\\components",
     "\\src\\app\\components\\add-candidate",
-    "\\src\\app\\components\\candidate-list"
+    "\\src\\app\\components\\candidate-list",
+    "\\src\\app\\components\\delete-candidate",
+    "\\src\\app\\components\\home",
+    "\\src\\app\\components\\modify-candidate"
   ],
   "SelectedNode": "\\src\\app\\candidate.service.ts",
   "PreviewInSolutionExplorer": false

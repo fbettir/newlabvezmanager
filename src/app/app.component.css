@@ -9,3 +9,9 @@ dialog.header a{
     text-decoration: none;
     color: inherit;
 }
+
+div.nagybox{
+    margin-left: 50px;
+    margin-top: 50px;
+
+}

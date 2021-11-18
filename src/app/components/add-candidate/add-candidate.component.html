@@ -1,55 +1,75 @@
 <div class="card my-5">
   <div class="card-body">
-    <form #addCandidate="ngForm" (ngSubmit)="onSubmit(addCandidate.value)" >
+    <form #addCandidate="ngForm" (ngSubmit)="onSubmit(addCandidate.value)">
       <div class="form-group">
-        <label for="name">Veznév</label>
-        <input type="text" ngModel 
+        <label for="firstName">Vezetéknév</label>
+        <input type="text"
+               ng-model="firstName"
                class="form-control"
                id="firstName"
                name="firstName"
-               placeholder="Enter your name"
+               placeholder="Vezetéknév"
                required>
-        
+
       </div>
-      
+
 
       <div class="form-group">
-        <label for="name">Kernév</label>
-        <input type="text" ngModel 
+        <label for="lastName">Keresztnév</label>
+        <input type="text" ngModel
                class="form-control"
                id="lastName"
                name="lastName"
-               placeholder="Enter your name"
+               placeholder="Keresztnév"
                required>
-        
+
       </div>
-      
+
 
       <div class="form-group">
         <label for="email">Email</label>
-        <input type="text" ngModel 
+        <input type="email" ngModel
                class="form-control"
                id="email"
                name="email"
-               placeholder="Enter your email address"
+               placeholder="E-mail cím"
                required>
-        
+
       </div>
 
       <div class="form-group">
-        <label for="email">Phone</label>
-        <input type="text" ngModel 
+        <label for="email">Telefonszám</label>
+        <input type="text" ngModel
                class="form-control"
                id="phone"
                name="phone"
-               placeholder="Enter your tel"
+               placeholder="Telefonszám"
                required>
-        
+
       </div>
+
+      <div class="form-group">
+        <label for="kurzus">Kurzus</label>
+        <select ngModel
+               class="form-control"
+               id="kurzus"
+               name="kurzus"
+               placeholder="Kurzus"
+               required>
+            <option>MobWeb - 2021/2021/2</option>
+            <option>Adatbázisok - 2021/2021/2</option>
+            <option>Programozás alapjai 1 - 2021/2021/2</option>
+            <option>Programozás alapjai 2 - 2021/2021/2</option>
+            <option>Programozás alapjai 3 - 2021/2021/2</option>
+            
+          </select>
+
+      </div>
+
 
       <button type="submit"
               class="btn btn-info">
-        Submit
+        Jelentkezés
       </button>
     </form>
   </div>
