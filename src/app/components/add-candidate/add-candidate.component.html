@@ -1,10 +1,10 @@
 <div class="card my-5">
   <div class="card-body">
+    <h2>Jelentkezés demonstráornak</h2>
     <form #addCandidate="ngForm" (ngSubmit)="onSubmit(addCandidate.value)">
       <div class="form-group">
         <label for="firstName">Vezetéknév</label>
-        <input type="text"
-               ng-model="firstName"
+        <input type="text" ngModel
                class="form-control"
                id="firstName"
                name="firstName"

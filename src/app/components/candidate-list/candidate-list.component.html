@@ -27,7 +27,7 @@
                 </tr>
                 <tr *ngFor= "let candidate of candidates; index as indexOfelement">
                     <td>
-                       {{candidate.firstName}} {{candidate.lastName}}
+                       {{candidate.id}} {{candidate.firstName}} {{candidate.lastName}}
                     </td>
                     <td>
                         {{candidate.email}}
@@ -52,14 +52,17 @@
                     </div>
 
                         <a href="/modify" class="btn btn-small btn-dark">Módosítás</a>
-                        <a href="/delete/id={{indexOfelement}}" class="btn btn-small btn-danger">Törlés</a>
+                        <a href="/delete/?id={{candidate.id}}" class="btn btn-small btn-danger">Törlés</a>
                     </td>
 
                 </tr>
             </table>
-            <br>
+          <!--
+          <br>
             <a href="add" class="btn btn-primary">Új laborvezető hozzáadása</a>
             <br>
+
+            -->
         </div>
 
     </div>

@@ -14,19 +14,22 @@ export class CandidateService {
   constructor(private http: HttpClient) { }
   
   public getCandidates(): Observable<Candidate[]> {
-	  return this.http.get<Candidate[]>(`${this.apiServerUrl}/candidate/all`);	  
+	  return this.http.get<Candidate[]>(`${this.apiServerUrl}/candidates/`);	  
   }
 
   public addCandidates(candidate: Candidate): Observable<any> {
-	  return this.http.post<any>(`${this.apiServerUrl}/candidate/add`, candidate);	  
+	  return this.http.post<any>(`${this.apiServerUrl}/candidates/`, candidate);	  
   }
   
   public updateCandidates(candidate: Candidate): Observable<void> {
-	  return this.http.put<any>(`${this.apiServerUrl}/candidate/update`, candidate);	  
+	  return this.http.put<any>(`${this.apiServerUrl}/candidates/`, candidate);	  
   }
 
   public deleteCandidates(candidateID: number): Observable<any> {
-	  return this.http.delete<any>(`${this.apiServerUrl}/candidate/delete/${candidateID}`);	
+    //console.log(candidateID);
+    let a = `${this.apiServerUrl}/candidates/${candidateID}`;
+    //console.log(a);
+	  return this.http.delete<any>(a);	
   }
   
   

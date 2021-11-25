@@ -19,9 +19,9 @@ export class DeleteCandidateComponent implements OnInit {
   ngOnInit(): void {
 
   this.route.queryParams.subscribe(params => {
-        const id = params['id'];
-        this.candidateService.deleteCandidates(id);
-        this.router.navigate(['/candidates']);
+        let id = params['id'];
+        this.candidateService.deleteCandidates(id).subscribe();
+        //this.router.navigate(['/candidates']);
       });
   }
 

@@ -21,7 +21,9 @@ const routes: Routes = [
   {path: 'add', component: AddCandidateComponent },
   {path: 'delete', component: DeleteCandidateComponent },
   {path: 'modify', component: ModifyCandidateComponent },
-  {path: 'courses', component: CourseListComponent}
+  {path: 'courses-list', component: CourseListComponent},
+  {path: 'courses-add', component: AddCourseComponent},
+  {path: 'courses-delete', component: DeleteCourseComponent}
 ];
 
 @NgModule({
