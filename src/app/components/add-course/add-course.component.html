@@ -1,1 +1,56 @@
-<p>add-course works!</p>
+<div class="card my-5">
+  <div class="card-body">
+    <h2>Új kurzus hozzáadása</h2>
+    <form #addCourse="ngForm" (ngSubmit)="onSubmit(addCourse.value)">
+      <div class="form-group">
+        <label for="name">Kurzusnév</label>
+        <input type="text" ngModel
+               class="form-control"
+               id="name"
+               name="name"
+               placeholder="Kurzusnév"
+               required>
+
+      </div>
+
+      <!--
+      <div class="form-group">
+        <label for="lastName">Félév</label>
+        <input type="text" ngModel
+               class="form-control"
+               id="year"
+               name="year"
+               placeholder="Félév"
+               required>
+
+      </div>
+        -->
+
+
+      <div class="form-group">
+        <label for="year">Félév</label>
+        <select ngModel
+                class="form-control"
+                id="year"
+                name="year"
+                placeholder="Félév"
+                required>
+          <option>2021/2022/2</option>
+          <option>2022/2023/1</option>
+          <option>2022/2023/2</option>
+          <option>2023/2024/1</option>
+
+
+        </select>
+
+      </div>
+
+
+      <button type="submit"
+              class="btn btn-info">
+        Hozzáadás
+      </button>
+    </form>
+  </div>
+</div>
+
