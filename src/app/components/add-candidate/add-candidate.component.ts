@@ -2,6 +2,9 @@ import { Component} from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Candidate } from '../../candidate';
 import { CandidateService } from '../../candidate.service';
+import { Course } from '../../course';
+import { CourseService } from '../../course.service';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
@@ -11,18 +14,19 @@ import { CandidateService } from '../../candidate.service';
 export class AddCandidateComponent{
 
    candidate : Candidate;
+   public courses: Course[];
 
 
 
   constructor(
       private route: ActivatedRoute, 
       private router: Router, 
-      private candidateService: CandidateService) {
+      private candidateService: CandidateService,
+      private courseService: CourseService) {
    
   }
 
   onSubmit(data: any){
-   // TODO: ID léptetés???
     this.candidateService.addCandidates({"id" : 3, "firstName" : data.firstName, "lastName" : data.lastName, "email" : data.email, "phone" : data.phone}).subscribe(result => this.gotoList());
   } 
 
@@ -33,6 +37,14 @@ export class AddCandidateComponent{
 
 
   ngOnInit(): void {
+    this.courseService.getCourses().subscribe(
+	    (response: Course[]) => {
+		    this.courses = response;
+	    },
+	    (error: HttpErrorResponse) => {
+		    alert(error.message);
+	    }
+	   );
   }
 
 }

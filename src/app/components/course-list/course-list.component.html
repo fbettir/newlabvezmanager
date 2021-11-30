@@ -13,10 +13,13 @@
               Név
             </th>
             <th>
-              Év
+              Időpontja
             </th>
             <th>
-              Oktató
+              Időtartam
+            </th>
+            <th>
+              Laborvezető
             </th>
           </tr>
           <tr *ngFor="let course of courses; index as indexOfelement">
@@ -29,23 +32,13 @@
             <td>
               {{course.duration}}
             </td>
-
             <td>
-              <!---add candidate modal
-        <div class="modal fade" id="addCandidateModal" tabindex="-1" role="dialog" aria-labelledby="candidateAddModalLabel" aria-hidden="true">
-        </div>
+              {{course.tutorId}}
+            </td>
+            <td>
 
-        <!---edit candidate modal
-        <div class="modal fade" id="updateCandidateModal" tabindex="-1" role="dialog" aria-labelledby="candidateEditModalLabel" aria-hidden="true">
-        </div>
-
-        <!---edit candidate modal
-        <div class="modal fade" id="deleteCandidateModal" tabindex="-1" role="dialog" aria-labelledby="candidateDeleteModalLabel" aria-hidden="true">
-        </div>
-        -->
-
-              <a href="/modify" class="btn btn-small btn-dark">Módosítás</a>
-              <a href="/courses-delete/id={{indexOfelement}}" class="btn btn-small btn-danger">Törlés</a>
+             <a href="/courses-copy/?id={{course.id}}" class="btn btn-small btn-dark">Másolás</a>
+              <a href="/courses-delete/?id={{course.id}}" class="btn btn-small btn-danger">Törlés</a>
             </td>
 
           </tr>

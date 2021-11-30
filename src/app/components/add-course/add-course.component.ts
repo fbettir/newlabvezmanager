@@ -25,7 +25,7 @@ export class AddCourseComponent implements OnInit {
   }
 
   gotoList(){
-    this.router.navigate(['/candidates/courses']);
+    this.router.navigate(['/courses-list/']);
     
   }
 }
