@@ -21,7 +21,7 @@ export class AddCourseComponent implements OnInit {
   }
 
   onSubmit(data: any){
-    this.courseService.addCourses({"id" : 3, "name" : data.name, "year" : data.year, "tutor" : ""}).subscribe(result => this.gotoList());
+    this.courseService.addCourses({"id" : 3, "name" : data.name, "beginningTime" : data.beg, "duration" : data.dur, "tutorId" : 0}).subscribe(result => this.gotoList());
   }
 
   gotoList(){

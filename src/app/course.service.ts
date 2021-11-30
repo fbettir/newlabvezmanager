@@ -14,15 +14,15 @@ export class CourseService {
   constructor(private http: HttpClient) { }
   
   public getCourses(): Observable<Course[]> {
-	  return this.http.get<Course[]>(`${this.apiServerUrl}/candidates/courses`);	  
+	  return this.http.get<Course[]>(`${this.apiServerUrl}/courses`);	  
   }
 
    public addCourses(course: Course): Observable<any> {
-	  return this.http.post<any>(`${this.apiServerUrl}/candidates/courses/add`, course);	  
+	  return this.http.post<any>(`${this.apiServerUrl}/courses`, course);	  
   }
 
     public deleteCourses(courseID: number): Observable<any> {
-    let a = `${this.apiServerUrl}/candidates/courses/${courseID}`;
+    let a = `${this.apiServerUrl}/courses/${courseID}`;
 	  return this.http.delete<any>(a);	
   }
 

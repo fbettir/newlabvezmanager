@@ -1,6 +1,7 @@
 export interface Course {
   id: number;
-  name: string;
-  year: string;
-  tutor: string;
+  name: String;
+  beginningTime: String;
+  duration: number;
+  tutorId: number;
 }

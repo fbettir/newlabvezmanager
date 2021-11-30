@@ -14,34 +14,38 @@
       </div>
 
       <!--
+  <div class="form-group">
+    <label for="lastName">Félév</label>
+    <input type="text" ngModel
+           class="form-control"
+           id="year"
+           name="year"
+           placeholder="Félév"
+           required>
+
+  </div>
+    -->
+
+
       <div class="form-group">
-        <label for="lastName">Félév</label>
-        <input type="text" ngModel
+        <label for="beg">Kezdés időpontja</label>
+        <input type="time" ngModel
                class="form-control"
-               id="year"
-               name="year"
-               placeholder="Félév"
+               id="beg"
+               name="beg"
+               placeholder="Kezdés"
                required>
 
       </div>
-        -->
-
 
       <div class="form-group">
-        <label for="year">Félév</label>
-        <select ngModel
-                class="form-control"
-                id="year"
-                name="year"
-                placeholder="Félév"
-                required>
-          <option>2021/2022/2</option>
-          <option>2022/2023/1</option>
-          <option>2022/2023/2</option>
-          <option>2023/2024/1</option>
-
-
-        </select>
+        <label for="dur">Időtartam</label>
+        <input type="number" ngModel
+               class="form-control"
+               id="dur"
+               name="dur"
+               placeholder="Időtartam"
+               required>
 
       </div>
 
