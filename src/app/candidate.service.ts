@@ -21,7 +21,10 @@ export class CandidateService {
 	  return this.http.get<Candidate>(`${this.apiServerUrl}/candidates/${candidateID}`);	  
   }
 
-  public addCandidates(candidate: Candidate): Observable<any> {
+  public addCandidates(candidate: Candidate/*, courses : String[]*/): Observable<any> {
+    /*for(let i of courses){
+        this.http.post<any>(`${this.apiServerUrl}/applications/`, candidate.id, i).subscribe();	
+    }*/
 	  return this.http.post<any>(`${this.apiServerUrl}/candidates/`, candidate);	  
   }
   

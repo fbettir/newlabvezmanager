@@ -14,6 +14,7 @@ import { ModifyCandidateComponent } from './components/modify-candidate/modify-c
 import { CourseListComponent } from './components/course-list/course-list.component';
 import { AddCourseComponent } from './components/add-course/add-course.component';
 import { DeleteCourseComponent } from './components/delete-course/delete-course.component';
+import { CopyCourseComponent } from './components/copy-course/copy-course.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { DeleteCourseComponent } from './components/delete-course/delete-course.
     ModifyCandidateComponent,
     CourseListComponent,
     AddCourseComponent,
-    DeleteCourseComponent   
+    DeleteCourseComponent,
+    CopyCourseComponent   
   ],
   imports: [
     BrowserModule,

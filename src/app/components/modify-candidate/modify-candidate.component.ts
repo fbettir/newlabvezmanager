@@ -41,7 +41,6 @@ export class ModifyCandidateComponent implements OnInit{
   ngOnInit(): void {
 
     this.getCandidates();
-
     //this.acandidate[0] = this.candidate;
   }
 

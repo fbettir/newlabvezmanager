@@ -27,7 +27,8 @@ export class AddCandidateComponent{
   }
 
   onSubmit(data: any){
-    this.candidateService.addCandidates({"id" : 3, "firstName" : data.firstName, "lastName" : data.lastName, "email" : data.email, "phone" : data.phone}).subscribe(result => this.gotoList());
+    //let a = ["5", "4", "2"];
+    this.candidateService.addCandidates({"id" : 3, "firstName" : data.firstName, "lastName" : data.lastName, "email" : data.email, "phone" : data.phone}/*, a*/).subscribe(result => this.gotoList());
   } 
 
   gotoList(){

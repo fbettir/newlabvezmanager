@@ -11,6 +11,7 @@ import { ModifyCandidateComponent } from './components/modify-candidate/modify-c
 import { CourseListComponent } from './components/course-list/course-list.component';
 import { AddCourseComponent } from './components/add-course/add-course.component';
 import { DeleteCourseComponent } from './components/delete-course/delete-course.component';
+import { CopyCourseComponent } from './components/copy-course/copy-course.component';
 
 
 
@@ -23,7 +24,8 @@ const routes: Routes = [
   {path: 'modify', component: ModifyCandidateComponent },
   {path: 'courses-list', component: CourseListComponent},
   {path: 'courses-add', component: AddCourseComponent},
-  {path: 'courses-delete', component: DeleteCourseComponent}
+  {path: 'courses-delete', component: DeleteCourseComponent},
+  {path: 'courses-copy', component: CopyCourseComponent}
 ];
 
 @NgModule({

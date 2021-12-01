@@ -1,10 +1,12 @@
 <div class="card my-5">
   <div class="card-body">
-    <h2>Új kurzus hozzáadása</h2>
-    <form #addCourse="ngForm" (ngSubmit)="onSubmit(addCourse.value)">
+    <h2>Kurzus másolása</h2>
+    <form #copyCourse="ngForm" (ngSubmit)="onSubmit(copyCourse.value)">
+      <input type="hidden" id="id" name="id" ngModel [(ngModel)]="course.id" />
       <div class="form-group">
         <label for="name">Kurzusnév</label>
         <input type="text" ngModel
+               [(ngModel)]="course.name"
                class="form-control"
                id="name"
                name="name"
@@ -16,6 +18,7 @@
       <div class="form-group">
         <label for="beg">Kezdés időpontja</label>
         <input type="text" ngModel
+               [(ngModel)]="course.beginningTime"
                class="form-control"
                id="beg"
                name="beg"
@@ -27,6 +30,7 @@
       <div class="form-group">
         <label for="dur">Időtartam</label>
         <input type="number" ngModel
+               [(ngModel)]="course.duration"
                class="form-control"
                id="dur"
                name="dur"
@@ -43,4 +47,3 @@
     </form>
   </div>
 </div>
-
