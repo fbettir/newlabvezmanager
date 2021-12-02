@@ -34,6 +34,11 @@ export class CandidateService {
 	  return this.http.delete<any>(a);	
   }
 
+    public deleteFromApps(candidateID: number): Observable<any> {
+    let a = `${this.apiServerUrl}/courses/candidate/${candidateID}`;
+	  return this.http.delete<any>(a);	
+  }
+
   public addApplication(coId: number, caId: number): Observable<any>{
     let app = new App();
     app.courseId = coId;

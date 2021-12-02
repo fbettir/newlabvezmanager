@@ -21,7 +21,7 @@ export class DeleteCandidateComponent implements OnInit {
   this.route.queryParams.subscribe(params => {
         let id = params['id'];
         this.candidateService.deleteCandidates(id).subscribe();
-        //this.router.navigate(['/candidates']);
+        this.candidateService.deleteFromApps(id).subscribe();
       });
   }
 
