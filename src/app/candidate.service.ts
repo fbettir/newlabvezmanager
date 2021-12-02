@@ -21,10 +21,7 @@ export class CandidateService {
 	  return this.http.get<Candidate>(`${this.apiServerUrl}/candidates/${candidateID}`);	  
   }
 
-  public addCandidates(candidate: Candidate/*, courses : String[]*/): Observable<any> {
-    /*for(let i of courses){
-        this.http.post<any>(`${this.apiServerUrl}/applications/`, candidate.id, i).subscribe();	
-    }*/
+  public addCandidates(candidate: Candidate): Observable<any> {
 	  return this.http.post<any>(`${this.apiServerUrl}/candidates/`, candidate);	  
   }
   
@@ -33,12 +30,21 @@ export class CandidateService {
   }
 
   public deleteCandidates(candidateID: number): Observable<any> {
-    //console.log(candidateID);
     let a = `${this.apiServerUrl}/candidates/${candidateID}`;
-    //console.log(a);
 	  return this.http.delete<any>(a);	
   }
-  
-  
 
+  public addApplication(coId: number, caId: number): Observable<any>{
+    let app = new App();
+    app.courseId = coId;
+    app.candidateId = caId;
+    console.log(app);
+    return this.http.post<any>(`${this.apiServerUrl}/applications`, app);	  
+  }
+  
+}
+
+class App{
+  courseId: number;
+  candidateId: number;
 }

@@ -36,9 +36,26 @@ export class AddCandidateComponent{
 
   onSubmit(data: any){
     this.fetchCheckedIDs();
-    console.log(this.checkedIDs);
-    this.candidateService.addCandidates({"id" : 3, "firstName" : data.firstName, "lastName" : data.lastName, "email" : data.email, "phone" : data.phone}/*, a*/).subscribe(result => this.gotoList());
-  } 
+    this.candidateService.addCandidates({"id" : 3, "firstName" : data.firstName, "lastName" : data.lastName, "email" : data.email, "phone" : data.phone}).subscribe(
+      (response: Candidate) => {
+		    this.candidate = response;
+        this.addApplications();
+	    });
+
+    
+
+
+
+      /* application hozzá tudom adni backcand.id alapján, checkID tömb alapján */
+ } 
+
+ addApplications(){
+    for(let cid of this.checkedIDs )
+    {
+      this.candidateService.addApplication(cid,this.candidate.id).subscribe();
+    }
+    this.gotoList();
+ }
 
   gotoList(){
     this.router.navigate(['/candidates']);
@@ -56,8 +73,7 @@ fillCB(): void{
               cbdata.cname = new String(c.name);
               cbdata.cbt = new String(c.beginningTime);
               cbdata.isChecked = false;
-              this.checkboxes.push(cbdata);
-        
+              this.checkboxes.push(cbdata);      
         });
 }
 
@@ -92,10 +108,6 @@ ngOnInit(): void {
 	   );
   }
 }
-
-
-
-
 
 class Cbox{
   id : number;
