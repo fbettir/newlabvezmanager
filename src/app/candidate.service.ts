@@ -17,7 +17,11 @@ export class CandidateService {
 	  return this.http.get<Candidate[]>(`${this.apiServerUrl}/candidates/`);	  
   }
 
-    public getCandidatesById(candidateID: number): Observable<Candidate> {
+  public getCandidatesCourses(candidateID: number): Observable<String[]> {
+	  return this.http.get<String[]>(`${this.apiServerUrl}/candidates/${candidateID}/courses`);	  
+  }
+
+  public getCandidatesById(candidateID: number): Observable<Candidate> {
 	  return this.http.get<Candidate>(`${this.apiServerUrl}/candidates/${candidateID}`);	  
   }
 

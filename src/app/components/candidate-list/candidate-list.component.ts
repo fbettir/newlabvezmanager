@@ -13,6 +13,7 @@ import { Container } from '@angular/compiler/src/i18n/i18n_ast';
 })
 export class CandidateListComponent implements OnInit {
   public candidates: Candidate[];
+  public candCourses: String[];
 
 
   constructor(private candidateService: CandidateService) { 
@@ -32,6 +33,17 @@ export class CandidateListComponent implements OnInit {
 		  alert(error.message);
 	  }
 	 );
+   /*
+   	this.candidateService.getCandidatesCourses(this.candidates.id).subscribe(
+	  (response: String[]) => {
+		  this.candCourses = response;
+	  },
+	  (error: HttpErrorResponse) => {
+		  alert(error.message);
+	  }
+	 );
+   */
+
   }
 
 }
