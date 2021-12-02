@@ -11,10 +11,18 @@ import { HttpErrorResponse } from '@angular/common/http';
   templateUrl: 'add-candidate.component.html',
   styleUrls: ['add-candidate.component.css']
 })
+
+
+
+
 export class AddCandidateComponent{
 
    candidate : Candidate;
-   public courses: Course[];
+   public checkboxes : Cbox[];
+   public courses : Course[];
+
+   selectedItemsList : Cbox[];
+   checkedIDs : number[];
 
 
 
@@ -27,7 +35,8 @@ export class AddCandidateComponent{
   }
 
   onSubmit(data: any){
-    //let a = ["5", "4", "2"];
+    this.fetchCheckedIDs();
+    console.log(this.checkedIDs);
     this.candidateService.addCandidates({"id" : 3, "firstName" : data.firstName, "lastName" : data.lastName, "email" : data.email, "phone" : data.phone}/*, a*/).subscribe(result => this.gotoList());
   } 
 
@@ -37,15 +46,60 @@ export class AddCandidateComponent{
   }
 
 
-  ngOnInit(): void {
+fillCB(): void{
+
+        this.checkboxes = [];
+
+        this.courses.forEach((c, index) => {
+              let cbdata = new Cbox();
+              cbdata.id = c.id;
+              cbdata.cname = new String(c.name);
+              cbdata.cbt = new String(c.beginningTime);
+              cbdata.isChecked = false;
+              this.checkboxes.push(cbdata);
+        
+        });
+}
+
+fetchSelectedItems() {
+
+    this.selectedItemsList = [];
+
+     this.selectedItemsList = this.checkboxes.filter((value, index) => {
+        return value.isChecked
+     });
+  }
+
+   fetchCheckedIDs() {
+      this.checkedIDs = [];
+      this.checkboxes.forEach((value, index) => {
+         if (value.isChecked) {
+            this.checkedIDs.push(value.id);
+         }
+      });
+   }
+
+ngOnInit(): void {
+
     this.courseService.getCourses().subscribe(
 	    (response: Course[]) => {
 		    this.courses = response;
+        this.fillCB();
 	    },
 	    (error: HttpErrorResponse) => {
 		    alert(error.message);
 	    }
 	   );
   }
+}
 
+
+
+
+
+class Cbox{
+  id : number;
+  cname : String;
+  cbt: String;
+  isChecked : boolean;
 }
